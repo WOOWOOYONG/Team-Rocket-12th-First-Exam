@@ -1,0 +1,235 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.italic {
+  font-style: italic;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  .banner {
+    background-image: url('../imgs/banner.png');
+    background-size: cover;
+    background-position: center;
+    height: 958px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 50px;
+    p {
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 500;
+    }
+    h1 {
+      font-size: 80px;
+      text-align: center;
+      margin-bottom: 32px;
+      margin-top: 0;
+      font-style: italic;
+    }
+    h2 {
+      font-size: 24px;
+      margin-bottom: 40px;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.4;
+      padding: 0 13px;
+    }
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 0;
+    }
+  }
+  .about {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .intro {
+      h2 {
+        @include title;
+        margin-bottom: 40px;
+      }
+      .photo {
+        text-align: center;
+        margin-bottom: 20px;
+        img {
+          max-width: 100%;
+        }
+      }
+      p {
+        @include info;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+      p:last-child {
+        border-bottom: 1px solid;
+        padding-bottom: 20px;
+      }
+    }
+    .experience {
+      margin-top: 28px;
+      list-style-type: none;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 28px;
+        .dot {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          background-color: #891818;
+          border-radius: 50%;
+          margin-right: 16px;
+        }
+        p {
+          @include info;
+        }
+      }
+    }
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000;
+    color: #fff;
+    margin-top: 28px;
+    padding-bottom: 160px;
+    .brand-intro {
+      text-align: center;
+      margin-bottom: 68px;
+      h2 {
+        margin-top: 56px;
+        @include title;
+      }
+      h3 {
+        margin-top: 12px;
+        margin-bottom: 32px;
+        @include info;
+      }
+      p {
+        font-size: 20px;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+    }
+    .brand-photos {
+      display: grid;
+      place-items: center;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      padding: 0 12px;
+      @include PC {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 24px;
+        padding: 0 360px;
+      }
+      img {
+        width: 100%;
+      }
+
+      img:nth-child(1) {
+        @include PC {
+          grid-column: span 8 / span 8;
+          grid-column-start: 3;
+        }
+      }
+      img:nth-child(2),
+      img:nth-child(3) {
+        grid-column: span 1 / span 1;
+        @include PC {
+          grid-column: span 6 / span 6;
+        }
+      }
+    }
+  }
+  .works {
+    margin-top: 56px;
+    h2 {
+      @include title;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .works-container {
+      margin-top: 56px;
+      display: grid;
+      place-items: center;
+      padding: 0 12px;
+      @include PC {
+        grid-template-columns: repeat(12, 1fr);
+        padding: 0 360px;
+        gap: 24px;
+      }
+
+      .work-card {
+        margin-top: 24px;
+        @include PC {
+          margin-top: 0;
+        }
+        img {
+          max-width: 100%;
+        }
+        p {
+          font-size: 20px;
+          margin-top: 16px;
+        }
+      }
+      .work-card:nth-child(1),
+      .work-card:nth-child(2),
+      .work-card:nth-child(3) {
+        grid-column: 1fr;
+        @include PC {
+          grid-column: span 4 / span 4;
+        }
+      }
+      .work-card:nth-child(4),
+      .work-card:nth-child(5) {
+        grid-column: 1fr;
+        @include PC {
+          grid-column: span 6 / span 6;
+        }
+      }
+      .work-card:nth-child(6),
+      .work-card:nth-child(7),
+      .work-card:nth-child(8) {
+        grid-column: 1fr;
+        @include PC {
+          grid-column: span 4 / span 4;
+        }
+      }
+    }
+  }
+  footer {
+    margin-top: 144px;
+    background-color: #000;
+    color: #fff;
+    .contact {
+      margin: 0 auto;
+      padding: 64px 0;
+      h2 {
+        @include title;
+      }
+      p {
+        text-align: center;
+        margin-top: 16px;
+        @include info;
+      }
+    }
+  }
+}

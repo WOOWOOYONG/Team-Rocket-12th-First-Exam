@@ -1,0 +1,21 @@
+@mixin title {
+  font-size: 36px;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  @include Pad {
+    font-size: 56px;
+  }
+  @include PC {
+    font-size: 64px;
+  }
+}
+
+@mixin info {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  @include Pad {
+    font-size: 24px;
+  }
+}
